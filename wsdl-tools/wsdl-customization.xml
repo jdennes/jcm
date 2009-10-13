@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jaxws:bindings
+    wsdlLocation="campaignmonitor.wsdl"
+    xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+    xsi:schemaLocation="
+        http://java.sun.com/xml/ns/jaxws http://java.sun.com/xml/ns/jaxws/wsdl_customizationschema_2_0.xsd
+        http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd">
+
+    <jaxws:package name="com.campaignmonitor.api" />
+
+    <jaxws:bindings node="//wsdl:portType[@name='apiSoap']">
+        <jaxws:class name="CampaignMonitorApi" />
+    </jaxws:bindings>
+
+     <jaxws:bindings node="//xs:schema[@targetNamespace='http://api.createsend.com/api/']">
+        <jaxws:bindings node="xs:complexType[@name='SubscriberUnsubscribe']">
+            <jaxb:class name="SubscriberUnsubscribeType"/>
+        </jaxws:bindings>
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.campaignmonitor.api.types"/>
+        </jaxb:schemaBindings>
+    </jaxws:bindings>
+
+</jaxws:bindings>

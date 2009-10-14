@@ -1,5 +1,8 @@
 
-jcm is a SOAP-based Java wrapper for the Campaign Monitor API (http://www.campaignmonitor.com/api/).
+jcm is a SOAP-based Java wrapper for the Campaign Monitor API - http://www.campaignmonitor.com/api/
 
 The Campaign Monitor API publishes a WSDL document at http://api.createsend.com/api/api.asmx?wsdl and proxy classes found in the com.campaignmonitor.api.types package are generated using the jaxws-maven-plugin.
 
+To use the functionality of this API wrapper in your own Java application, you can simply include the jcm.jar file as a library and call the underlying API methods from there.
+
+For examples of how the underlying API methods are called, see the com.campaignmonitor.api.console.Console class.

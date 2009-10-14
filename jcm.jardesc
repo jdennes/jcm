@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="MacRoman" standalone="no"?>
+<?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
 <jardesc>
     <jar path="jcm/jcm.jar"/>
     <options buildIfNeeded="true" compress="true" descriptionLocation="/jcm/jcm.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="false" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
@@ -11,9 +11,7 @@
         </sealing>
     </manifest>
     <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
-        <file path="/jcm/.classpath"/>
-        <file path="/jcm/README"/>
         <javaElement handleIdentifier="=jcm/src"/>
-        <file path="/jcm/.project"/>
+        <file path="/jcm/jcm.jardesc"/>
     </selectedElements>
 </jardesc>

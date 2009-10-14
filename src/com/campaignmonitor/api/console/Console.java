@@ -1,6 +1,3 @@
-/**
- * Console for interactively testing the Campaign Monitor API
- */
 package com.campaignmonitor.api.console;
 
 import java.util.Scanner;
@@ -12,8 +9,8 @@ import com.campaignmonitor.api.types.List;
 import com.campaignmonitor.api.types.Result;
 
 /**
+ * Console for interactively testing the Campaign Monitor API wrapper
  * @author jdennes
- *
  */
 public class Console {
 
@@ -37,7 +34,9 @@ public class Console {
 		this.clientId = in.nextLine();
 	}
 
-
+	/**
+	 * Test getting lists for a client
+	 */
 	public void getClientListsTest() {
 		this.collectClientId();
 		ClientGetLists params = new ClientGetLists(); {{
@@ -57,12 +56,9 @@ public class Console {
 			System.out.println(String.format("%d: %s", res.getCode(), res.getMessage()));
 		}
 	}
-
+	
 	public static void main(String[] args) {
-
 		Console con = new Console();
-
-		// Do what you want to from here...
 		con.getClientListsTest();
 	}
 }

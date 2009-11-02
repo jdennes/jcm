@@ -9,6 +9,8 @@ import com.campaignmonitor.api.types.ArrayOfString;
 import com.campaignmonitor.api.types.CampaignCreate;
 import com.campaignmonitor.api.types.ClientGetLists;
 import com.campaignmonitor.api.types.List;
+import com.campaignmonitor.api.types.ListGetStats;
+import com.campaignmonitor.api.types.ListStatistics;
 import com.campaignmonitor.api.types.Result;
 
 /**
@@ -19,7 +21,7 @@ import com.campaignmonitor.api.types.Result;
 public class Console {
 
 	private String apiKey, clientId, campaignName, campaignSubject, fromName, 
-	fromEmail, replyToEmail, htmlUrl, textUrl;
+	fromEmail, replyToEmail, htmlUrl, textUrl, listId;
 	private ArrayOfList listSegments;
 	private ArrayOfString listIds;
 	
@@ -110,11 +112,32 @@ public class Console {
 			System.out.println(String.format("%d: %s", res.getCode(), res.getMessage()));
 		}
 	}
+
+	public void getListStatsTest() {
+		System.out.println("Testing the List.GetStats API method...");
+		listId = collectString("List ID:");
+		ListGetStats params = new ListGetStats();
+		params.setApiKey(apiKey);
+		params.setListID(listId);
+		Object o = api.getListStats(params).getListGetStatsResult();
+
+		if (o instanceof ListStatistics) {
+			System.out.println("Congratulations, you retrieved the following stats:");
+			ListStatistics stats = (ListStatistics)o;
+			System.out.println(String.format("Total Active: %d\nNew subscribers today: %d\nNew subscribers yesterday: %d\nNew subscribers this week: %d\nNew subscribers this month: %d\nNew subscribers this year: %d",
+					stats.getTotalActiveSubscribers(), stats.getNewActiveSubscribersToday(), stats.getNewActiveSubscribersYesterday(), stats.getNewActiveSubscribersThisWeek(), stats.getNewActiveSubscribersThisMonth(), stats.getNewActiveSubscribersThisYear()));
+		} else if (o instanceof Result) {
+			Result res = (Result)o;
+			System.out.println("Sorry, the following error occurred:");
+			System.out.println(String.format("%d: %s", res.getCode(), res.getMessage()));
+		}
+	}
 	
 	public static void main(String[] args) {
 		Console con = new Console();
 		// Run the tests you want from here:
 		//con.getClientListsTest();
-		con.createCampaignTest();
+		//con.createCampaignTest();
+		con.getListStatsTest();
 	}
 }

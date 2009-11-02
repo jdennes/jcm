@@ -57,6 +57,8 @@ import com.campaignmonitor.api.types.ListGetCustomFields;
 import com.campaignmonitor.api.types.ListGetCustomFieldsResponse;
 import com.campaignmonitor.api.types.ListGetDetail;
 import com.campaignmonitor.api.types.ListGetDetailResponse;
+import com.campaignmonitor.api.types.ListGetStats;
+import com.campaignmonitor.api.types.ListGetStatsResponse;
 import com.campaignmonitor.api.types.ListUpdate;
 import com.campaignmonitor.api.types.ListUpdateResponse;
 import com.campaignmonitor.api.types.ObjectFactory;
@@ -88,6 +90,8 @@ import com.campaignmonitor.api.types.TemplateGetDetail;
 import com.campaignmonitor.api.types.TemplateGetDetailResponse;
 import com.campaignmonitor.api.types.TemplateUpdate;
 import com.campaignmonitor.api.types.TemplateUpdateResponse;
+import com.campaignmonitor.api.types.UserGetApiKey;
+import com.campaignmonitor.api.types.UserGetApiKeyResponse;
 import com.campaignmonitor.api.types.UserGetClients;
 import com.campaignmonitor.api.types.UserGetClientsResponse;
 import com.campaignmonitor.api.types.UserGetCountries;
@@ -111,6 +115,18 @@ import com.campaignmonitor.api.types.UserGetTimezonesResponse;
 })
 public interface CampaignMonitorApi {
 
+
+    /**
+     * 
+     * @param parameters
+     * @return
+     *     returns com.campaignmonitor.api.types.UserGetApiKeyResponse
+     */
+    @WebMethod(operationName = "GetApiKey", action = "http://api.createsend.com/api/User.GetApiKey")
+    @WebResult(name = "User.GetApiKeyResponse", targetNamespace = "http://api.createsend.com/api/", partName = "parameters")
+    public UserGetApiKeyResponse getApiKey(
+        @WebParam(name = "User.GetApiKey", targetNamespace = "http://api.createsend.com/api/", partName = "parameters")
+        UserGetApiKey parameters);
 
     /**
      * 
@@ -315,6 +331,18 @@ public interface CampaignMonitorApi {
     public ListCreateCustomFieldResponse createListCustomField(
         @WebParam(name = "List.CreateCustomField", targetNamespace = "http://api.createsend.com/api/", partName = "parameters")
         ListCreateCustomField parameters);
+
+    /**
+     * 
+     * @param parameters
+     * @return
+     *     returns com.campaignmonitor.api.types.ListGetStatsResponse
+     */
+    @WebMethod(operationName = "GetListStats", action = "http://api.createsend.com/api/List.GetStats")
+    @WebResult(name = "List.GetStatsResponse", targetNamespace = "http://api.createsend.com/api/", partName = "parameters")
+    public ListGetStatsResponse getListStats(
+        @WebParam(name = "List.GetStats", targetNamespace = "http://api.createsend.com/api/", partName = "parameters")
+        ListGetStats parameters);
 
     /**
      * 

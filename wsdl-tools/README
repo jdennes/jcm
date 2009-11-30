@@ -3,3 +3,4 @@ To generate the proxy classes from the wsdl:
 1. Ensure that maven is installed and configured correctly
 2. Save the latest wsdl from http://api.createsend.com/api/api.asmx?wsdl to the campaignmonitor.wsdl file
 3. Run: mvn generate-sources
+4. You should now have a directory named target which contains the generated proxy classes. You probably want to copy these to the src directory.

@@ -124,8 +124,31 @@ public class Console {
 		if (o instanceof ListStatistics) {
 			System.out.println("Congratulations, you retrieved the following stats:");
 			ListStatistics stats = (ListStatistics)o;
-			System.out.println(String.format("Total Active: %d\nNew subscribers today: %d\nNew subscribers yesterday: %d\nNew subscribers this week: %d\nNew subscribers this month: %d\nNew subscribers this year: %d",
-					stats.getTotalActiveSubscribers(), stats.getNewActiveSubscribersToday(), stats.getNewActiveSubscribersYesterday(), stats.getNewActiveSubscribersThisWeek(), stats.getNewActiveSubscribersThisMonth(), stats.getNewActiveSubscribersThisYear()));
+			System.out.println(String.format("Total Active: %d\nNew subscribers today: %d\nNew subscribers yesterday: %d\nNew subscribers this week: %d\nNew subscribers this month: %d\nNew subscribers this year: %d\n\nTotal Unsubscribes: %d\nUnsubscribes today: %d\nUnsubscribes yesterday: %d\nUnsubscribes this week: %d\nUnsubscribes this month: %d\nUnsubscribes this year: %d\n\nTotal Deleted: %d\nDeleted today: %d\nDeleted yesterday: %d\nDeleted this week: %d\nDeleted this month: %d\nDeleted this year: %d\n\nTotal Bounces: %d\nBounces today: %d\nBounces yesterday: %d\nBounces this week: %d\nBounces this month: %d\nBounces this year: %d\n",
+					stats.getTotalActiveSubscribers(), 
+					stats.getNewActiveSubscribersToday(), 
+					stats.getNewActiveSubscribersYesterday(), 
+					stats.getNewActiveSubscribersThisWeek(), 
+					stats.getNewActiveSubscribersThisMonth(), 
+					stats.getNewActiveSubscribersThisYear(),
+					stats.getTotalUnsubscribes(),
+					stats.getUnsubscribesToday(),
+					stats.getUnsubscribesYesterday(),
+					stats.getUnsubscribesThisWeek(),
+					stats.getUnsubscribesThisMonth(),
+					stats.getUnsubscribesThisYear(),
+					stats.getTotalDeleted(),
+					stats.getDeletedToday(),
+					stats.getDeletedYesterday(),
+					stats.getDeletedThisWeek(),
+					stats.getDeletedThisMonth(),
+					stats.getDeletedThisYear(),
+					stats.getTotalBounces(),
+					stats.getBouncesToday(),
+					stats.getBouncesYesterday(),
+					stats.getBouncesThisWeek(),
+					stats.getBouncesThisMonth(),
+					stats.getBouncesThisYear()));
 		} else if (o instanceof Result) {
 			Result res = (Result)o;
 			System.out.println("Sorry, the following error occurred:");

@@ -123,6 +123,7 @@
         <s:sequence>
           <s:element minOccurs="0" maxOccurs="1" name="CampaignID" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="SentDate" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="TotalRecipients" type="s:int" />
         </s:sequence>
@@ -135,6 +136,24 @@
           <s:element minOccurs="1" maxOccurs="1" name="NewActiveSubscribersThisWeek" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="NewActiveSubscribersThisMonth" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="NewActiveSubscribersThisYear" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalUnsubscribes" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnsubscribesToday" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnsubscribesYesterday" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnsubscribesThisWeek" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnsubscribesThisMonth" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnsubscribesThisYear" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalDeleted" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedToday" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedYesterday" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedThisWeek" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedThisMonth" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeletedThisYear" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalBounces" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BouncesToday" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BouncesYesterday" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BouncesThisWeek" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BouncesThisMonth" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BouncesThisYear" type="s:int" />
         </s:sequence>
       </s:complexType>
       <s:complexType name="ListCustomField">

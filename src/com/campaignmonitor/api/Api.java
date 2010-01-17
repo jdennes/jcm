@@ -1,7 +1,6 @@
 
 package com.campaignmonitor.api;
 
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.logging.Logger;
 import javax.xml.namespace.QName;
@@ -17,7 +16,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.1
  * 
  */
-@WebServiceClient(name = "api", targetNamespace = "http://api.createsend.com/api/", wsdlLocation = "file:/Users/jdennes/data/james/dev/java/eclipse/jcm/wsdl-tools/campaignmonitor.wsdl")
+@WebServiceClient(name = "api", targetNamespace = "campaignmonitor.wsdl")
 public class Api
     extends Service
 {
@@ -28,11 +27,10 @@ public class Api
     static {
         URL url = null;
         try {
-            URL baseUrl;
-            baseUrl = com.campaignmonitor.api.Api.class.getResource(".");
-            url = new URL(baseUrl, "file:/Users/jdennes/data/james/dev/java/eclipse/jcm/wsdl-tools/campaignmonitor.wsdl");
-        } catch (MalformedURLException e) {
-            logger.warning("Failed to create URL for the wsdl Location: 'file:/Users/jdennes/data/james/dev/java/eclipse/jcm/wsdl-tools/campaignmonitor.wsdl', retrying as a local file");
+            url = com.campaignmonitor.api.Api.class.getResource("campaignmonitor.wsdl");
+        } catch (Exception e) {
+        	if (url != null)
+	            logger.warning(String.format("Failed to create URL for the wsdl Location: %s, retrying as a local file", url.toString()));
             logger.warning(e.getMessage());
         }
         API_WSDL_LOCATION = url;

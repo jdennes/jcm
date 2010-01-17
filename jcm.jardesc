@@ -11,7 +11,7 @@
         </sealing>
     </manifest>
     <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
-        <javaElement handleIdentifier="=jcm/src"/>
         <file path="/jcm/jcm.jardesc"/>
+        <javaElement handleIdentifier="=jcm/src"/>
     </selectedElements>
 </jardesc>

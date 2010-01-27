@@ -4,14 +4,17 @@ import java.util.Arrays;
 import java.util.Scanner;
 import com.campaignmonitor.api.Api;
 import com.campaignmonitor.api.CampaignMonitorApi;
+import com.campaignmonitor.api.types.ArrayOfClient;
 import com.campaignmonitor.api.types.ArrayOfList;
 import com.campaignmonitor.api.types.ArrayOfString;
 import com.campaignmonitor.api.types.CampaignCreate;
+import com.campaignmonitor.api.types.Client;
 import com.campaignmonitor.api.types.ClientGetLists;
 import com.campaignmonitor.api.types.List;
 import com.campaignmonitor.api.types.ListGetStats;
 import com.campaignmonitor.api.types.ListStatistics;
 import com.campaignmonitor.api.types.Result;
+import com.campaignmonitor.api.types.UserGetClients;
 
 /**
  * Console for interactively testing the Campaign Monitor API wrapper
@@ -37,6 +40,28 @@ public class Console {
 	private String collectString(String prompt) {
 		System.out.println(prompt);
 		return in.nextLine();
+	}
+
+	/*
+	 * Test getting clients for a user
+	 * @see http://www.campaignmonitor.com/api/method/user-getclients/
+	 */
+	public void getUserClientsTest() {
+		System.out.println("Testing the User.GetClients API method...");
+		UserGetClients params = new UserGetClients();
+		params.setApiKey(this.apiKey);
+		Object o = api.getClients(params).getUserGetClientsResult();
+
+		if (o instanceof ArrayOfClient) {
+			java.util.List<Client> arr = ((ArrayOfClient)o).getClient();
+			System.out.println(String.format("Congratulations, %d client%s found:", arr.size(), arr.size() == 1 ? "" : "s"));
+			for (Client c : ((ArrayOfClient)o).getClient())
+				System.out.println(String.format("Client -> ID: %s; Name: %s", c.getClientID(), c.getName()));
+		} else if (o instanceof Result) {
+			Result res = (Result)o;
+			System.out.println("Sorry, the following error occurred:");
+			System.out.println(String.format("%d: %s", res.getCode(), res.getMessage()));
+		}
 	}
 	
 	/**
@@ -161,6 +186,7 @@ public class Console {
 		// Run the tests you want from here:
 		//con.getClientListsTest();
 		//con.createCampaignTest();
-		con.getListStatsTest();
+		//con.getListStatsTest();
+		con.getUserClientsTest();
 	}
 }

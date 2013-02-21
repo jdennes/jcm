@@ -1,7 +1,1 @@
-jcm is a SOAP-based Java library for version 2 of the Campaign Monitor API - http://www.campaignmonitor.com/api/v2/
-
-The Campaign Monitor API publishes a WSDL document at http://api.createsend.com/api/api.asmx?wsdl and proxy classes found in the com.campaignmonitor.api.types package are generated using the jaxws-maven-plugin.
-
-To use the functionality of this API wrapper in your own Java application, you can simply include the jcm.jar file as a library and call the underlying API methods from there.
-
-For examples of how the underlying API methods are called, see the com.campaignmonitor.api.console.Console class.
+Do not use this library. Use createsend-java instead: https://github.com/campaignmonitor/createsend-java
